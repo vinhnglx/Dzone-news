@@ -6,15 +6,27 @@ var gulp = require('gulp'),
     minifyCss = require('gulp-minify-css'),
     uglify = require('gulp-uglify'),
     streamify = require('gulp-streamify'),
+    connect = require('gulp-connect'),
     minifyHtml = require('gulp-minify-html');
 
-gulp.task('react', function() {
+gulp.task('js', function() {
   return browserify('./source/scripts/main.js')
         .transform(babelify)
         .bundle()
         .pipe(source('main.js'))
         .pipe(streamify(uglify()))
         .pipe(gulp.dest('./build/scripts/'));
+});
+
+gulp.task('connect', function() {
+  connect.server({
+    root: 'build',
+    livereload: true,
+    port: 4000,
+    open: {
+      browser: 'chrome' // if not working OS X browser: 'Google Chrome'
+    }
+  });
 });
 
 gulp.task('scss', function() {
@@ -24,7 +36,7 @@ gulp.task('scss', function() {
     .pipe(gulp.dest('./build/styles/'))
 })
 
-gulp.task('index', function() {
+gulp.task('html', function() {
   return gulp.src('./source/index.html')
     .pipe(minifyHtml())
     .pipe(gulp.dest('./build/'))
@@ -35,4 +47,7 @@ gulp.task('image', function() {
     .pipe(gulp.dest('./build/img'))
 });
 
-gulp.task('default', ['index', 'scss', 'react', 'image']);
+gulp.task('build', ['html', 'scss', 'js', 'image']);
+
+gulp.task('server-build', ['html', 'scss', 'js', 'image', 'connect']);
+
