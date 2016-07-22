@@ -19,6 +19,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "^1.5.4",
+    "jscroll": "^2.3.5",
+    "moment": "^2.14.1",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
