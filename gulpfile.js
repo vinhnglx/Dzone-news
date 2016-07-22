@@ -21,11 +21,7 @@ gulp.task('js', function() {
 gulp.task('connect', function() {
   connect.server({
     root: 'build',
-    livereload: true,
-    port: 4000,
-    open: {
-      browser: 'chrome' // if not working OS X browser: 'Google Chrome'
-    }
+    port: 4000
   });
 });
 
@@ -47,7 +43,7 @@ gulp.task('image', function() {
     .pipe(gulp.dest('./build/img'))
 });
 
-gulp.task('build', ['html', 'scss', 'js', 'image']);
+gulp.task('default', ['html', 'scss', 'js', 'image']);
 
-gulp.task('server-build', ['html', 'scss', 'js', 'image', 'connect']);
+gulp.task('server', ['html', 'scss', 'js', 'image', 'connect']);
 
