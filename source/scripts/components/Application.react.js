@@ -1,9 +1,16 @@
-var React = require('react')
+var React = require('react'),
+    Stream = require('./Stream.react');
 
 var Application = React.createClass({
   render: function() {
     return(
-      <h1> Hello </h1>
+      <div className="row">
+        <div className="col-md-12">
+          <div className="blog-post">
+            <Stream />
+          </div>
+        </div>
+      </div>
     )
   }
 });
