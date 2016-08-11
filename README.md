@@ -28,6 +28,10 @@ npm run dist
 npm run dist
 ```
 
+## Demo
+
+https://nitro-news.herokuapp.com/
+
 ## Todo
 
 - Apply Flux architecture
