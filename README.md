@@ -4,25 +4,25 @@ A simple SPA listing daily technical news from the Dzone website (https://dzone.
 
 ## Setting up project
 
-1. Install dependencies
+- Install dependencies
 
 ```
 npm install
 ```
 
-2. Run the website
+- Run the website
 
 ```
 npm start
 ```
 
-3. Build the dist version
+- Build the dist version
 
 ```
 npm run dist
 ```
 
-4. Run the dist version
+- Run the dist version
 
 ```
 npm run dist
