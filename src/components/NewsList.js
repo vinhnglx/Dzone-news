@@ -26,7 +26,9 @@ class NewsList extends React.Component {
         )
       });
     } else {
-      entries = null;
+      entries = (
+        <div className="spinner"></div>
+      );
     }
 
     return (
