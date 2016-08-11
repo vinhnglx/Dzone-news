@@ -16,6 +16,18 @@ npm install
 npm start
 ```
 
+3. Build the dist version
+
+```
+npm run dist
+```
+
+4. Run the dist version
+
+```
+npm run dist
+```
+
 ## Todo
 
 - Apply Flux architecture
